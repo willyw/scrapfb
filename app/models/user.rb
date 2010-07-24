@@ -45,6 +45,9 @@ class User < ActiveRecord::Base
     end
   end
   
- 
+  def fb_access_token_invalid?
+    # case 1, simplest : no fb_access_token
+    fb_access_token.size == 0
+  end
   
 end

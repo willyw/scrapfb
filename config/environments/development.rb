@@ -23,4 +23,3 @@ AppDetail= {
   :hostname => "http://localhost:3000",
   :name => 'qTiest-Dev'
 }
-

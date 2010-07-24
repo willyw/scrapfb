@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.root  :controller => "items", :action => "show_random"
+  map.root  :controller => "user_sessions", :action => "new"
   map.generate_error "/generate_error" , :controller => "items", :action => "play_error"
   map.register "/register", :controller => "users", :action => "new"
   map.login "/login",:controller => "user_sessions", :action => "new"
@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.oauth_start "/oauth_redirect", :controller => "users", :action =>"oauth_redirect"
   map.try_oauth "/try_oauth", :controller => "users", :action => "try_oauth"
   
-  map.show_random "/cutie" , :controller => "items", :action => "show_random"
+  map.show_completed_scrapd "/completed_scrapds" , :controller => "items", :action => "index"
   map.second_step "/uploaded_item/second_step/:id", :controller => "uploaded_items", :action => "second_step"
   map.resource :user_session
   

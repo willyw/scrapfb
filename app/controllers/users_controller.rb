@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   APP_SECRET = '3368a580517b3cc316c9293cf24619fc'
   APP_ID  = '135319876508646'
   
+  
   def new
     @user = User.new
   end
@@ -26,15 +27,15 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = @current_user
+    @user = current_user
   end
 
   def edit
-    @user = @current_user
+    @user = current_user
   end
   
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to :action => "show", :success => true, :after_change => true
@@ -90,6 +91,7 @@ class UsersController < ApplicationController
           current_user.fb_access_token = @access_token
           current_user.save
         end
+        redirect_to new_uploaded_item_url(:from_fb_auth => true)
       return
     else
       base_url = "https://graph.facebook.com/oauth/authorize?"

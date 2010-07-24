@@ -5,7 +5,7 @@
 		<% else %>
 			<li>
 		<% end %>
-			<%= link_to "Upload", new_uploaded_item_url %>
+			<%= link_to "<span stlye='font-weight:bold;'>+</span> Add", new_uploaded_item_url %>
 		</li>
 		
 		<% if params[:controller] == "uploaded_items" and params[:action] == "index" %>

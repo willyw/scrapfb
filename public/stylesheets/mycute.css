@@ -18,6 +18,12 @@
 #center div#steps  p.image-wrapper { margin: 0 auto; width:450px; }
 #center div#steps p#second_step-instruction { margin: 0 auto 45px;}
 #center div#steps  p span { font-weight:bold;}
+					#new_uploaded_item { margin-left:30px;}
+					#new_uploaded_item label { display:block; color : #323232; font-size:24px; margin-bottom:15px;}
+						textarea#uploaded_item_link { border: 2px solid #323232; font-size:15px; padding:5px;}
+							#start_scrap { border : 2px solid #323232; font-size:15px; padding:5px;}
+							#add_another_link { border : 2px solid #323232; font-size:15px; padding:8px;}
+
 #center ul#images-list { background-color: rgb(240,240,238); list-style:none;}
 #center ul#images-list li  { float : left; width:150px ; height: 150px; text-align: center;}
 

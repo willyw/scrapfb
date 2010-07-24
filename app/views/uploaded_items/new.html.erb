@@ -1,32 +1,16 @@
-
-
-<%= render :partial => "left_nav" %>
-
+<%= render :partial => "left_note"%>
 <div id="center">
-	<ul class="clearfix" id="upload-steps">
-		<li class="current">
-			1. Upload the picture
-		</li>
-
-		<li id="next-pointer">
-			&gt;
-		</li>
-		<li>
-			2. Describe it! 
-		</li>
-	</ul>
 	<div id="steps">
-		<p>
-			<span>No Picture No Truth</span>, or so they said. It is much more exciting to see the cute things in the form of picture, not only description. Please upload the cute image.
-		</p>
-		<% form_for @uploaded_item, :html => { :multipart => true } do |f| %>	
-			<p>
-				<%= f.file_field :photo %>
-			</p>
-			<p>
-				<%= submit_tag 'Upload' %>
-			</p>
+	<% if current_user.fb_access_token_invalid? %>
+		<%= render :partial =>"invite_oauth" %>
+	<% else %>
+		<% if params[:from_fb_auth] and params[:from_fb_auth] == "true" %>
+			<div style="background-color:red; color:black;">
+				Welcome back! Now, we are ready to rock and roll!
+			</div>
 		<% end %>
-	</div>
+		<%= render :partial => "add_task"%>
+	<% end %>
+	</div><!-- EOF #steps -->
 
 </div>

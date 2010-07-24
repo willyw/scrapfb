@@ -1,9 +1,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def show_qtiest?( params )
-    condition_1_qtiest?(params) or
-      condition_2_qtiest?(params) or
-        condition_3_qtiest?(params)
+    # condition_1_qtiest?(params) or
+    #       condition_2_qtiest?(params) or
+    #         condition_3_qtiest?(params)
+    params[:controller]=="items" and params[:action]=="index"
   end
   
   def show_mycute?( params )

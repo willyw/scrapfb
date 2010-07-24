@@ -12,7 +12,7 @@
 			<% else %>
 				<div>
 			<% end %>
-					<%=  link_to "qTies", show_random_url %>
+					<%=  link_to "scrapD", show_completed_scrapd_url %>
 				</div>
 			
 			<% if current_user %>
@@ -22,7 +22,7 @@
 				<% else %>
 					<div>
 				<% end %>
-						<%= link_to "myCute", new_uploaded_item_url %>
+						<%= link_to "<span style='font-weight:bold;'>+</span> scrapTask", new_uploaded_item_url %>
 					</div>
 					
 				<% if show_cuteProfile?( params ) %>
@@ -37,12 +37,17 @@
 		<% if current_user %>
 			<%= link_to "Logout", logout_url %>
 		<% end %>
-		<div id="register-login">
-			<% if params[:controller] == "user_sessions" and ( params[:action] == "new" or params[:action] == "create") %>
+	 	<!-- <div id="register-login"> -->
+			 <!-- <% if params[:controller] == "user_sessions" and ( params[:action] == "new" or params[:action] == "create") %>
 				<%= link_to "Register", new_account_url %> or <%= link_to "Login", new_user_session_url, :class=>"selected" %>
 			<% elsif params[:controller] == "users" and params[:action] == "new" %>
 					<%= link_to "Register", new_account_url, :class=>"selected" %> or <%= link_to "Login", new_user_session_url, :class=>"selected" %>
+			<% end %> 
+			 -->
+			<% if params[:controller] == "user_sessions" and params[:action] == "new"%>
+				<%#= link_to "Login", new_user_session_url, :class=>"selected" %>
 			<% end %>
-		</div> <!-- EO #register-login -->
+			
+		<!-- </div> --> <!-- EO #register-login -->
 	</div> <!-- EO div#header -->
 </div> <!-- EO div#header-wrapper -->

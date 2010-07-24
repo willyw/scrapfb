@@ -1,0 +1,18 @@
+<p>
+	<span>OK! The engine is warm!. Lets extract some data from Facebook! </span>
+	<br />
+	The result will be emailed to the email address you are logged in from! In this case, it is <span><%= current_user.email %></span>. However, you can always get back to this site, at the <span><%=  link_to "scrapD", show_completed_scrapd_url %></span> tab to download the result manually.
+	
+</p>
+<% form_for @uploaded_item do |f| %>	
+	<p>
+		<%= f.label :link , "Group URL"%>
+		<%= f.text_area :link , :rows => 5%>
+	</p>
+	<p>
+		<%= submit_tag 'Start Scrapping!', :id=>"start_scrap" %>
+		or
+		<a href="#" id="add_another_link">Add Another One</a>
+	</p>
+<% end %>
+
