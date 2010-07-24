@@ -1,9 +1,6 @@
 require 'cgi'
 
 class UsersController < ApplicationController
-  
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
   API_KEY = 'e4de6a450580adedbdadf124fba63e11'
   APP_SECRET = '3368a580517b3cc316c9293cf24619fc'
   APP_ID  = '135319876508646'

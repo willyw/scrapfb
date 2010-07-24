@@ -1,4 +1,7 @@
-test:
-  adapter: sqlite3
-  database: ":memory:"
-
+development:
+  adapter: mysql
+  encoding: utf8
+  database: scrapfb_dev
+  username: root 
+  password: 
+  host: localhost
