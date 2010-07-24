@@ -1,0 +1,23 @@
+<p style="margin:40px auto 10px; width:500px; text-align:left;">
+	<% for item in @items %>
+	<%= image_tag item.uploaded_item.photo.url(:index) %> 
+	<% end %>
+</p>
+
+
+<p style="margin:40px auto 10px; width:500px; line-height:20px;">
+	It seems that you love qTiest things so much. We believe that you have many qTiest items in your disposal as well. Why don't you join us? You can upload the items and find out what other thinks about it. 
+</p>
+
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.error_messages %>
+	<input type="hidden" id="stranger_key_data" name="stranger_key" value="<%= @temp_user.stranger_key%>" />
+	<input type="hidden" id="stranger_id_data" name="stranger_id" value="<%= @temp_user.id%>" />
+  <%= render :partial => "form_register", :locals => {:form => f, :user => @user }%>
+
+	<%#= render :partial => "form_register", :locals => {:form => f,
+	 												:user => @user } %>
+	
+	
+  <%= f.submit "Register" %>
+<% end %>

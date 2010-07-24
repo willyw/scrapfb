@@ -1,0 +1,23 @@
+<% form_for @user_session, :url => user_session_path do |f| %>
+  <%#= f.error_messages.length %>
+	<% if  f.error_messages.length != 0 %>
+	<div>
+		Wow, the combination of your email and password is wrong
+	</div>
+	<% end %>
+	
+	<div>
+	  <%= f.label :email %>
+	  <%= f.text_field :email %>
+
+	</div>
+	
+  
+	<div>
+		 <%= f.label :password %>
+		 <%= f.password_field :password %>
+  </div>
+
+
+  <%= f.submit "Login" %>
+<% end %>

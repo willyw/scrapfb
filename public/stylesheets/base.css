@@ -1,0 +1,109 @@
+/** { behavior: url(/stylesheets/iepngfix.htc) }*/
+/** html img.png,
+* html div.pngwrapper img,
+* html .png{
+   position:relative;
+   behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+       this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",
+       this.src = "/images/spacer.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+       this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')",
+       this.runtimeStyle.backgroundImage = "none")),this.pngSet=true)
+   );
+
+}
+*/
+
+* html * {
+  behavior: expres\sion(
+  (this.runtimeStyle.behavior = "none") && (this.currentStyle.backgroundImage.toString().toLowerCase().indexOf('.png')>-1) && (
+  this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.currentStyle.backgroundImage.toString().replace('url("','').replace('")','') + "', sizingMethod='crop')",
+  this.runtimeStyle.zoom = 1,
+  this.runtimeStyle.backgroundImage = "none"
+  )
+  );
+}
+
+/* @group reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+	background-position : 0px 0px;
+	background-repeat : no-repeat;
+	background-color : transparent;
+}
+input, textarea { padding : 0px; margin : 0px }
+
+body { 
+  line-height: 1.5; 
+	font-family : "Arial Rounded MT Bold", "Lucida Grande", Arial, sans-serif;
+	font-size : 12px;
+	color : #273852;
+	line-height : 14px;
+}
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left;  }
+table, td, th { vertical-align: middle; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+/* Remove annoying border on linked images. */
+a img { border: none; }
+a:active { outline : none }
+:focus { -moz-outline-style: none; }
+
+a { color : inherit }
+/* @end */
+
+
+
+/* @group clearfix (clearing) */
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac */
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/* @end */
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* @group debug */
+.debug { border : 1px solid #c00 }
+.debug-blue { border : 1px solid #00c }
+.debug-green { border : 1px solid #0c0 }
+.debug-black { border : 1px solid #000 }
+.debug-white { border : 1px solid #FFF }
+/* end */
+/* ------------------------------------------------------------------------------------------ */
+
+
+
+/* @group fonts **/
+.serif { font-family : Palatino, Georgia, "Times New Roman", serif }
+.sans { font-family : "Lucida Grande","Lucida Sans Unicode","Lucida",Verdana,Arial,sans-serif }
+.tahoma { font-family: Tahoma, Verdana, Arial }
+.arial { font-family: Arial, Verdana, sans-serif }
+.lucida { font-family : "Lucida Grande", "Lucida Sans Unicode", sans-serif }
+.am-serif { font-family: "American Typewriter", Georgia, serif }
+.verdana { font-family: Verdana, Tahoma, Arial }

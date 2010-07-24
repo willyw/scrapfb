@@ -1,0 +1,21 @@
+<div class="set-wrapper">
+	<%= form.label :email %>
+	<%= form.text_field :email %>
+	<%= show_error_on :email, user  %>
+</div>
+
+
+<div class="set-wrapper">
+	<%= form.label :password, form.object.new_record? ? nil : "Change password" %>
+	<%= form.password_field :password %>
+	<%= show_error_on :password , user%>
+</div>
+
+<div class="set-wrapper">
+	<%= form.label :password_confirmation %>
+	<%= form.password_field :password_confirmation  %>
+	<% show_error_on :password , user%>
+</div>
+
+
+

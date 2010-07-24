@@ -1,0 +1,38 @@
+<%= render :partial => "left_nav" %>
+
+<div id="center">
+	<ul class="clearfix" id="upload-steps">
+		<li class="past">
+			1. Upload the picture
+		</li>
+
+		<li id="next-pointer">
+			&gt;
+		</li>
+		<li class="current">
+			2. Describe it! 
+		</li>
+	</ul>
+	<div id="steps">
+		<p class='image-wrapper'>
+			<%= image_tag @uploaded_item.photo.url(:describe) %>  
+		</p>
+		<p id="second_step-instruction">
+			Coolness! Now we have had a picture. There is picture, there might be truth. We can talk now! Please describe what this cute thing is. 
+		</p>
+		<% form_for @uploaded_item, :html => { :multipart => true } do |f| %>	
+			<p>
+				<%= f.label :title %>
+				<%= f.text_field :title %>
+			</p>
+			<p>
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+			</p>
+			<p>
+				<%= submit_tag 'Save Description' %>
+			</p>
+		<% end %>
+	</div>
+
+</div>

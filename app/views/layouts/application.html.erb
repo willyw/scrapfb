@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>qTiest | Where all the cute things are</title>
+		<meta http-equiv="Content-Language" content="English" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<%= stylesheet_link_tag "base", "sticky_footer" %>
+
+		<!--[if !IE 7]>
+			<style type="text/css">
+				#wrap {display:table;height:100%}
+			</style>
+		<![endif]-->
+		<%= stylesheet_link_tag "jquery.fancybox-1.3.1", "application", "mycute" %>
+		
+		
+		<%= javascript_include_tag "jquery-1.4.2.min", "jquery.fancybox-1.3.1.pack" , "application" %>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<%= render :file => "layouts/header.html.erb" %>
+			<div id="main" class="clearfix">
+				<%= yield %>
+			</div> <!-- EO div#main-->
+		</div><!-- EO div#wrap -->
+	
+	
+		<%= render :file => "layouts/footer.html.erb" %>
+	</body>
+</html>

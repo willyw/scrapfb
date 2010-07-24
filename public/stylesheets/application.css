@@ -1,0 +1,93 @@
+/*Utility*/
+.hidden { display:none;}
+/*Initial settings for all the layout*/
+body { width:100%; background-color : rgb(250,250,248); font-size:14px; font-family:  Helvetica, Arial; }
+#wrap { width : 100%; margin:0 auto; }
+#header-wrapper { width:100%; background-color: rgb(238,238,216);  padding-top:20px; padding-bottom:20px; }
+#header { width:960px; margin: 0 auto;}
+#main { width: 960px; margin: 0 auto;}
+#footer { width: 100%; background-color: rgb(238,238,216);}
+#footer-content { width:960px; margin:0 auto; text-align:center; padding-top:10px; color:rgb(100,100,100); font-weight:bold;}
+a { outline: none; text-decoration:none;}
+textarea { font-family : Helvetica, Arial;}
+
+/* #header CSS*/
+#logo { display: inline; float:left; margin-right:10px;}
+#logo a { display: block; }
+#header ul { float:left; list-style: none; color:rgb(100,100,100); font-size:36px; position:relative; top:43px;}
+#header ul a { text-decoration : none;}
+#header ul div { float:left; display:inline; margin: 0 3px; padding:15px 15px 13px; height: 15px;}
+#header ul div.selected {background-color: rgb(250,250,248); color:rgb(50,50,50); -moz-border-radius-topright: 15px; -moz-border-radius-topleft: 15px; -webkit-border-top-left-radius: 15px; -webkit-border-top-right-radius: 15px; }
+#header div#register-login { float:right; position:relative; top:43px; font-size:20px; color: rgb(100,100,100);}
+#header div#register-login  a { text-decoration : none;}
+#header div#register-login  a.selected {  border: 1px solid rgb(250,250,248); background-color: rgb(250,250,248); color: rgb(50,50,50);}
+/* #main CSS*/
+
+/* testing for the height. it has to be dynamic height*/
+/*#left, #center, #right { border:1px solid black; }*/
+#left, #center, #right { float:left; padding-bottom:20px;}
+#left { width:180px; margin-right:11px;}
+#center { width:540px; margin-right : 15px; }
+#right { width: 200px;}
+
+/* application.html */
+	#left { padding-top: 60px;}
+	#left p { width: 140px; margin: 0 auto; text-align: center;}
+	#left p.opinion  { margin-bottom: 40px;}
+	#left p.opinion cite { display:block; font-style : normal; margin-top:10px;}
+	
+	#center { padding-top: 35px; text-align:center;}
+	#center p.past-items { text-align: center; margin-top:20px;}
+	#center p.call-to-upload { margin:0 auto 40px; line-height:20px; text-align:left;}
+	#center p.call-to-invite { margin: 40px auto 40px; line-height:20px; text-align:left;}
+	#center h3 { width: 100%; margin: 0 auto; text-align:center; font-size:24px; margin-bottom:20px;}
+	#center img { margin-bottom:25px;}
+	#center blockquote { text-align: center; width:504px; margin : 0 auto; line-height:20px; margin-bottom:20px;}
+	
+		div#question-wrapper { display:none;}
+		div#question-wrapper p.instruction { text-align:left; display:none;  line-height:25px; margin-bottom:10px; margin-left:45px; padding-left:18px; width:400px;}
+			#question { text-align : left; width:488px; text-align : left; margin: 0 auto;  background-color: rgb(213,232,118); padding: 8px 0px 5px 16px; -moz-border-radius: 10px; -webkit-border-radius:10px; border : 1px solid #C0D16B; }
+			#question form { padding-top:1px;}
+			#question p { font-weight: bold;}
+			#question ul { list-style: none; margin-top: 15px;}
+			#question ul li { float:left; text-align : center; width:110px; }
+			#question ul li:hover { color: rgb(0,0,0); font-weight:bold;}
+			#question ul li input {margin: 0 auto 4px; cursor:pointer; width:20px; }
+			#question ul li label { display: block; cursor : pointer; }
+		
+
+		
+		
+		
+	#right { padding-top:35px;}
+	#right a {margin: 0 auto 10px; text-align:center; width:100px; border:1px solid rgb(166,166,151); font-size:18px; padding: 5px 0; background-color:rgb(250,250,227); cursor: pointer; display:block; text-decoration:none;}
+	#right ul { list-style: none; width:100px; margin:0 auto;}
+	#right ul li {  width:70px; height:70px; text-align:center;  width:100px; margin: 0 auto;}
+	
+/* Login */
+form#new_user_session { margin-top: 20px; width:500px; margin:40px auto 10px;}
+form#new_user_session span.errorMsg { margin-left: 20px; display: block; line-height: 20px; margin-top: 20px; margin-bottom: 20px; padding: 1px 1px 1px 3px; border: 1px solid red; background-color: rgb(242, 174, 190); color: rgb(100, 100, 100); text-align: left; }
+form#new_user_session span.errorMsg em  { font-weight: bold; color: rgb(30, 30, 30);}
+form#new_user_session  div  { margin-bottom: 40px;}
+form#new_user_session label { font-size:24px; color:rgb(50,50,50); margin-bottom:10px; display:block;}
+form#new_user_session input { border:2px solid rgb(50,50,50); padding:5px; font-size:15px;}
+form#new_user_session input#user_session_submit { cursor: pointer;}
+
+form#new_user { margin-top: 20px; width:500px; margin:40px auto 10px;}
+form#new_user div.set-wrapper  { margin-bottom: 40px;}
+form#new_user div.set-wrapper  ul.errMsg { list-style:none; padding:5px; background-color: rgb(230,230,230); color:rgb(50,50,50); font-weight:bold;}
+form#new_user div.set-wrapper  ul.errMsg li { line-height:20px;}
+form#new_user label { font-size:24px; color:rgb(50,50,50); margin-bottom:10px; display:block;}
+form#new_user input { border:2px solid rgb(50,50,50); padding:5px; font-size:15px;}
+form#new_user input#user_submit { cursor: pointer;}
+
+form.edit_user { margin-top: 20px; width:500px; margin:40px auto 10px;}
+form.edit_user p  { margin-bottom: 40px;}
+form.edit_user label { font-size:24px; color:rgb(50,50,50); margin-bottom:10px; display:block;}
+form.edit_user input { border:2px solid rgb(50,50,50); padding:5px; font-size:15px;}
+/*form.edit_user input#user_photo { border: 0px solid black;}*/
+form.edit_user input#user_submit { cursor: pointer;}
+
+form.edit_uploaded_item label { font-size:24px; color:rgb(50,50,50); margin-bottom:10px; display:block;}
+form.edit_uploaded_item input  { border:2px solid rgb(50,50,50); padding:5px; font-size:15px;}
+form.edit_uploaded_item textarea  { border:2px solid rgb(50,50,50); padding:5px; font-size:15px; width:500px; height:100px;}

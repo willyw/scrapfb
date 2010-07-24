@@ -1,0 +1,75 @@
+<%= render :partial => "left_nav" %>
+
+<div id="center">
+	
+	<% if params[:after_change] %>
+		<%= render :partial => "notification", :locals => { :success => params[:success]} %>
+	<% end %>
+	
+	
+	
+	<div id="profile">
+		<p id="profile-image-wrapper">
+			<img src="/images/willy_face.jpg" />
+			<a href="#" id="change-image">change</a>
+		</p>
+
+
+		<p class="profile-data" id="email-data">
+		  <span class="profile-variable">Email</span>
+		  <span class="profile-data"><%=h @user.email %></span>
+			<!-- <a href="#" class="toggler" toggle_id="change-user-email">change</a> -->
+			<!-- It is better for the email to remain constant -->
+		</p>
+		
+
+
+		<!-- <% form_for @user, :html => {:id=>"change-user-email"} do |form| %>
+			<p>
+				<%= form.label :email, "New email" %>
+				<%= form.text_field :email %>
+			</p>
+
+
+			<p>
+				<%= submit_tag "Change Email"%>
+			</p>
+			<a href="#" class="toggler" toggle_id="email-data">cancel</a>
+		<% end %>
+		 -->
+		
+		
+		<p class="profile-data" id="password-data">
+		  <span class="profile-variable">Password</span>
+		  <span class="profile-data">*** It is secret!</span>
+			<a href="#" class="toggler" toggle_id="change-user-password" >change</a>
+		</p>
+		
+		
+		<% form_for @user, :html => {:id=>"change-user-password"} do |form| %>
+			<p>
+				<%= form.label :password, "New password" %>
+				<%= form.password_field :password %>
+			</p>
+
+			<p>
+				<%= form.label :password_confirmation, "New password confirmation" %>
+				<%= form.password_field :password_confirmation %>
+			</p>
+			<p>
+				<%= submit_tag "Change Password"%>
+			</p>
+			<a href="#" class="toggler" toggle_id="password-data">cancel</a>
+		<% end %>
+
+	</div>
+	
+	
+
+</div>
+
+
+
+
+
+

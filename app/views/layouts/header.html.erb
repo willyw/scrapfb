@@ -1,0 +1,48 @@
+<div id="header-wrapper">
+	<div id="header" class="clearfix">
+		<div id="logo">
+			<a href='http://google.com'>
+				<img src="/images/qTiest_logo.png" />
+			</a>
+		</div>
+		
+		<ul>
+			<% if show_qtiest?( params ) %>
+				<div class="selected">
+			<% else %>
+				<div>
+			<% end %>
+					<%=  link_to "qTies", show_random_url %>
+				</div>
+			
+			<% if current_user %>
+			
+				<% if show_mycute?( params )  %>
+					<div class="selected">
+				<% else %>
+					<div>
+				<% end %>
+						<%= link_to "myCute", new_uploaded_item_url %>
+					</div>
+					
+				<% if show_cuteProfile?( params ) %>
+					<div class="selected">
+				<% else %>
+					<div>
+				<% end %>
+						<%= link_to "Profile", account_url %>
+					</div>	
+			<% end %>
+		</ul>
+		<% if current_user %>
+			<%= link_to "Logout", logout_url %>
+		<% end %>
+		<div id="register-login">
+			<% if params[:controller] == "user_sessions" and ( params[:action] == "new" or params[:action] == "create") %>
+				<%= link_to "Register", new_account_url %> or <%= link_to "Login", new_user_session_url, :class=>"selected" %>
+			<% elsif params[:controller] == "users" and params[:action] == "new" %>
+					<%= link_to "Register", new_account_url, :class=>"selected" %> or <%= link_to "Login", new_user_session_url, :class=>"selected" %>
+			<% end %>
+		</div> <!-- EO #register-login -->
+	</div> <!-- EO div#header -->
+</div> <!-- EO div#header-wrapper -->

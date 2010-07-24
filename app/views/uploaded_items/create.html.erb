@@ -1,0 +1,43 @@
+<div id="left">
+	<ul>
+		<li>
+			Upload
+		</li>
+		
+		<li>
+			Show all
+		</li>
+		<li>
+			Buy list
+		</li>
+	</ul>
+</div>
+
+<div id="center">
+	<ul class="clearfix" id="upload-steps">
+		<li class="past">
+			1. Upload the picture
+		</li>
+
+		<li id="next-pointer">
+			&gt;
+		</li>
+		<li class="current">
+			2. Describe it! 
+		</li>
+	</ul>
+	<div id="steps">
+		<p>
+			<span>No Picture No Truth</span>, or so they said. It is much more exciting to see the cute things in the form of picture, not only description. Please upload the cute image.
+		</p>
+		<% form_for @uploaded_item, :html => { :multipart => true } do |f| %>	
+			<p>
+				<%= f.file_field :photo %>
+			</p>
+			<p>
+				<%= submit_tag 'Upload' %>
+			</p>
+		<% end %>
+	</div>
+
+</div>

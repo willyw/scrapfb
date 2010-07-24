@@ -1,0 +1,19 @@
+<div id="left">
+	<ul>
+		<% if params[:controller]=='users' and params[:action] == 'show'%>
+			<li class="selected">
+		<% else %>
+			<li>
+		<% end %>
+			User Data
+		</li>
+		
+		<% if params[:controller] =="users" and (params[:action] == "try_oauth" or params[:action]=="oauth_redirect")%>
+			<li class="selected">
+		<% else %>
+			<li>
+		<% end %>
+			<%= link_to "Try OAuth", try_oauth_url%>
+		</li>
+	</ul>
+</div>

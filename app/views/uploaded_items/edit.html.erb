@@ -1,0 +1,15 @@
+<%= render :partial => "left_nav" %>
+
+<div id='center'>
+	<h1>Preview</h1>
+	<h3><%= @uploaded_item.title %></h3>
+	<p class='image-wrapper'>
+		<%= image_tag @uploaded_item.photo.url(:describe) %>  
+	</p>
+	<blockquote>
+		<%= @uploaded_item.description %> 
+	</blockquote>
+	
+	
+
+</div>

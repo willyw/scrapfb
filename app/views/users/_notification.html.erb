@@ -1,0 +1,15 @@
+<div id="notification">
+	<% if success %>
+		<span class="success">Your password is successfully changed.</span>
+	<% else %>
+		We can't change your password because:
+		<ol>
+			<li>
+				<em>Password</em> doesn't match <em>Password Confirmation</em>
+			</li>
+			<li>
+				Password must be <em>longer than 6 characters</em>
+			</li>
+		</ol>
+	<% end %>
+</div>

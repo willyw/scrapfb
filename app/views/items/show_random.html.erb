@@ -1,0 +1,80 @@
+<div id='left'>
+	<p class="opinion">
+		<img src="images/left_first.png" />
+		<cite>"I think it is cute"</cite>
+	</p>
+	
+	<p class="friends-opinion">
+		Most of your friends think it is normal
+	</p>
+	
+	<% if RAILS_ENV=="development" %>
+		<%= render :partial => "debug" %>
+	<% end %>
+	
+	
+</div>
+<div id='center'>
+
+	
+	
+	<h3><%=h @item.uploaded_item.title %>
+		<!-- Something Random --></h3>
+	<%= image_tag @item.uploaded_item.photo.url(:describe) , :id=>"star-image"%>  
+	<!-- <img src="/images/center_image.png" /> -->
+	<blockquote> 
+		<%=h @item.uploaded_item.description %>
+		<!-- Some description -->
+	</blockquote>
+	<div id="question-wrapper">
+		<p class="instruction hidden">
+			Hey there! <br />
+			Please rate the current item to see more qTiest! 
+		</p>
+		<div id="question">
+			<p>
+				I think <%=h @item.uploaded_item.title %> is: 
+			</p>
+			<% form_for ([@item, @new_rating] ) do |f| %>
+				<ul class="clearfix">
+					<li>
+						<%= f.radio_button :rate , '0'%>
+						<label for="rating_rate_0">Normal</label>
+					</li>
+					<li>
+						<%= f.radio_button :rate , '1'%>
+						<label for="rating_rate_1">Cute</label>
+					</li>
+					<li>
+						<%= f.radio_button :rate , '2'%>
+						<label for="rating_rate_2">SuperCute</label>
+					</li>
+					<li>
+						<%= f.radio_button :rate , '3'%>
+						<label for="rating_rate_3">In My Buy List!</label>
+					</li>
+				</ul>
+			<% end %>
+		</div> <!-- EO div#question -->
+	</div> <!-- EO div#question-wrapper -->
+</div>
+<div id='right'>
+	<a id="inline" href="#question-wrapper">
+		More qTies
+	</a>
+	<ul class="clearfix">
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+
+	</ul>
+</div>

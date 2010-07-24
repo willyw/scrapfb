@@ -1,0 +1,72 @@
+<div id='left'>
+	<p class="opinion">
+		<img src="images/left_first.png" />
+		<cite>"I think it is cute"</cite>
+	</p>
+	
+	<p class="friends-opinion">
+		Most of your friends think it is normal
+	</p>
+	<p>
+		<% if current_user %>
+		You are logged in
+		<% else %>
+		You are not logged in 
+		<% end %>
+	</p>
+</div>
+<div id='center'>
+	<h3>Mozart Choco Cream</h3>
+	<%= image_tag @item.uploaded_item.photo.url(:describe) %>  
+	<blockquote>
+		I found these cute little gems in Vienna, Austria at a store named Wiener Bierhoff. Their cuteness caught my interest immediately. I ended up in purchasing them, many of them.  
+	</blockquote>
+	<div id="question">
+		<p>
+			I think Mozart Choco Cream is: 
+		</p>
+		<form action="somewhere.html">
+			<ul class="clearfix">
+				<li>
+					<input type="radio" name="opinion" id="opinion1" value="normal" />
+					<label for="opinion1">Normal</label>
+				</li>
+			
+				<li>
+					<input type="radio" name="opinion" id="opinion2" value="cute" />
+					<label for="opinion2">Cute</label>
+				</li>
+			
+				<li>
+					<input type="radio" name="opinion" id="opinion3" value="supercute" />
+					<label for="opinion3">SuperCute</label>
+				</li>
+			
+				<li>
+					<input type="radio" name="opinion" id="opinion4"  value="buylist" />
+					<label for="opinion4">In my buy list</label>
+				</li>
+			</ul>
+		</form>
+	</div> <!-- EO div#question -->
+</div>
+<div id='right'>
+	<p>
+		More qTies
+	</p>
+	<ul class="clearfix">
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+
+	</ul>
+</div>

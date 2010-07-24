@@ -1,0 +1,22 @@
+<div id="left">
+	<ul>
+		<% if params[:controller] == "uploaded_items" and params[:action] != "index" %>
+			<li class="selected">
+		<% else %>
+			<li>
+		<% end %>
+			<%= link_to "Upload", new_uploaded_item_url %>
+		</li>
+		
+		<% if params[:controller] == "uploaded_items" and params[:action] == "index" %>
+			<li class="selected">
+		<% else %>
+			<li>
+		<% end %>
+			<%= link_to "Show All",  uploaded_items_url %>
+		</li>
+		<li>
+			Buy list
+		</li>
+	</ul>
+</div>

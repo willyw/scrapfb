@@ -1,0 +1,15 @@
+<%= render :partial => "left_nav" %>
+<div id='center'>
+	<h1 class="show-all">Your qTiests</h1>
+
+	<ul id="uploaded_items" class="clearfix">
+		<% for uploaded_item in @uploaded_items %>
+			<li>
+				<%= image_tag uploaded_item.photo.url(:index) %>  
+			</li>
+		<% end %>
+	</ul>
+	
+	
+
+</div>

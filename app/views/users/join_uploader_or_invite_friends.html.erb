@@ -1,0 +1,62 @@
+<!-- <p style="margin:40px auto 10px; width:500px; text-align:left;"> -->
+
+<div id='left'>
+	<p class="opinion">
+		<img src="images/left_first.png" />
+		<cite>"I think it is cute"</cite>
+	</p>
+	
+	<p class="friends-opinion">
+		Most of your friends think it is normal
+	</p>
+	
+
+	
+</div>
+<div id='center'>
+
+	
+	<p class="past-items">
+		<% for item in @items %>
+		<%= image_tag item.uploaded_item.photo.url(:index) %> 
+		<% end %>
+	</p>
+
+
+	<p class="call-to-upload">
+		It seems that you love qTiest things so much. We believe that you have many qTiest items in your disposal as well. Why don't you upload the cute items as well? By uploading those qTiest items, you can find out what other thinks about it and spread the qTiest! 
+	</p>
+
+	<%= link_to "OK, bring me to the upload page" , new_uploaded_item_url, :class => "allset" , :id =>"go-upload" %>
+
+	
+	<p class="call-to-invite">
+		Or, if you haven't had anything worth uploading, you can invite more people to enjoy all the qTiest items @qTiest.com! 
+	</p>
+	
+	<a class="allset" href="#" id="invite-people">Invite Friends</a>
+
+	
+	
+</div>
+<div id='right'>
+	<a id="inline" href="#question-wrapper">
+		More qTies
+	</a>
+	<ul class="clearfix">
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+		<li>
+			<img src="images/next_icon1.png">
+		</li>
+		
+
+	</ul>
+</div>
+
