@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
-  
+  before_filter :require_user
   
   protected 
   def user_layout( layout_name )

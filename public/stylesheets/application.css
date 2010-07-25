@@ -17,6 +17,7 @@ textarea { font-family : Helvetica, Arial;}
 #header ul { float:left; list-style: none; color:rgb(100,100,100); font-size:36px; position:relative; top:43px;}
 #header ul a { text-decoration : none;}
 #header ul div { float:left; display:inline; margin: 0 3px; padding:15px 15px 13px; height: 15px;}
+#header ul div:hover { background-color: #ffffe8; -moz-border-radius-topright: 15px; -moz-border-radius-topleft: 15px; -webkit-border-top-left-radius: 15px; -webkit-border-top-right-radius: 15px;}
 #header ul div.selected {background-color: rgb(250,250,248); color:rgb(50,50,50); -moz-border-radius-topright: 15px; -moz-border-radius-topleft: 15px; -webkit-border-top-left-radius: 15px; -webkit-border-top-right-radius: 15px; }
 #header div#register-login { float:right; position:relative; top:43px; font-size:20px; color: rgb(100,100,100);}
 #header div#register-login  a { text-decoration : none;}

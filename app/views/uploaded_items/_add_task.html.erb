@@ -2,12 +2,15 @@
 	<span>OK! The engine is warm!. Lets extract some data from Facebook! </span>
 	<br />
 	The result will be emailed to the email address you are logged in from! In this case, it is <span><%= current_user.email %></span>. However, you can always get back to this site, at the <span><%=  link_to "scrapD", show_completed_scrapd_url %></span> tab to download the result manually.
-	
+	<% if @prev_uploaded %>
+	<br />
+	<span style="background-color:green;color:rgb(250,250,250)">Yeah, the previous one was a success</span><br />
+	<% end %>
 </p>
 <% form_for @uploaded_item do |f| %>	
 	<p>
-		<%= f.label :link , "Group URL"%>
-		<%= f.text_area :link , :rows => 5%>
+		<%= f.label :fb_link , "Group URL"%>
+		<%= f.text_area :fb_link , :rows => 5%>
 	</p>
 	<p>
 		<%= submit_tag 'Start Scrapping!', :id=>"start_scrap" %>
