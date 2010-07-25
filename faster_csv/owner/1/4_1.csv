@@ -1,0 +1,113 @@
+fb_user_id,Name,link,message
+1069416817,Neil Kelly,,has anyone tried to access facebook group discussions using gnus?
+100001167758033,Boris Bao,,"Emacs + Org-mode 
+
+(setq org-todo-keywords      '((sequence ""TODO"" ""DOING"" ""HANGUP"" ""|"" ""DONE"" ""CANCEL"")))
+
+or:
+
+(setq org-todo-keywords      '((sequence ""TODO(t)"" ""DOING(i!)"" ""HANGUP(h!)"" ""|"" ""DONE(d!)"" ""CANCEL(c!)"")))
+
+open .org start org-mode:
+
+(add-to"
+100000886830602,Stas Antonov,,
+100000886830602,Stas Antonov,,"Пригласить меня на вашу вечеринку просто!
+Пиши в личку, Я vkontakte.ru
+http://vkontakte.ru/id9790191
+Реализация ""технической части"" Твоей личной вечеринки, это интересный момент для полёта фантазии моего креативного Я!
+(звук, свет, узкий круг правильных а"
+618494211,张森,,"""Guile can implement Emacs Lisp better than Emacs can."" http://lists.gnu.org/archive/html/emacs-devel/2010-04/msg00665.html"
+767488766,Adam Steineck,,What feature of emacs did you last learn? I recently learned a bit of artist-mode and emacs-server.
+1500236150,Karsten Lang Pedersen,,"After using emacs for 15 years, I've finally changed the caps-lock key to be an extra ctrl .. Why didn't I do that from the start?"
+505640391,Kyle Sexton,,emacs + org-mode!
+100000842948031,Colin Landrum,,I think some vi user was behind that photo selection.
+1003243801,Kiet Lam,,I agree. That thing looks like it's gonna drop any second.
+2729953,Vincent Jonathan Toups,,Can we find a picture of an ox/yac that doesn't look like its going to die?
+729643389,Radoslav Dixie Dorcik,,Hi :) Here is my hello from firefox + vimperator and with settings for vimperator to have emacs keybindings - http://sysphere.org/~anrxc/j/archives/2009/03/12/vimperator_for_emacs_users/index.html
+100000260356321,Faouzy Aladdin,,emacs eroooockkks
+668307937,El Alvarock,,"please add the link to the emacs wiki!
+http://emacswiki.org"
+100000506862401,Jurgen Defurne,,Common Lisp development with Emacs and Slime rocks!
+6018191,Amir Memon,,"Crazy... i entered M-x,f,b and i got added to this facebook group!! (jk, don't go try it now)"
+516349960,Scott Hazlett,,"ediff, C-M-s [regex] C-o, auto-mode-alist, yasnippets...  emacs where have you been??
+
+Oh and help system is fantastic"
+590560114,Vivek Dasmohapatra,,"Shameless self promotion: (IM client for emacs based on libpurple):
+http://savannah.nongnu.org/projects/elim
+http://www.emacswiki.org/emacs/ELIM
+"
+767488766,Adam Steineck,,"I think the asm-mode is awkward, it indents comments and code in a way I find less than useful, although the syntax highlighting is very good.
+
+Are there better assembly code modes for emacs out there?"
+599245405,علي أحمد خنافر,,"Hallo
+I think that emacs is the most powerful LaTeX text editor. You have just to install the package ""auctex"" in order to get access to a set of amazing hotkeys."
+1592826853,Rendragita Verwoll Atmohelix,,freedom to be you...long lasting open solaris...FOSS
+622611160,Marwa Abdallah Mohamed Kamil,,@marwa~: can u use emacs for latex?? or texmaker is better?
+670366416,Rikard Bosnjakovic,,@Etienne: Have you tried google? You can find vast amount of tutorials there.
+670366416,Rikard Bosnjakovic,,"@Adam: You can also use C-x C-v RET, that will save you some typing."
+1081964435,Etienne Renault,,"hi all ! I use emacs for a while now and I create a little funny language but now i'd like to create my own mode do you know where I can find some tutorials? 
+thx 
+"
+767488766,Adam Steineck,,"When I type C-x-f I execute ""find-file"" which will visit the buffer for a particular file. However, if I want the file reloaded from disk, what do I do then? Currently I am stuck with having to kill the buffer before doing find-file again which is a bit a"
+1630087271,Nicolas ReiKon Koenig,,and it is not possible to have personal hotkey with notepad++...
+1374581137,Giuseppe Scrivano,,Quentin... ask them to read emails with Notepad++.
+750323894,Exal García Carrillo,,"Hey, does anyone knows if its possibly read a mail in Gnus (even as a raw format) which has been expired (sure, by press E on the message) long time ago????"
+699067380,Quentin Quadrat,,Hi ! I use Emacs at work and everybody is laughing at me because they use Notepad++ What should I do to prove that I'm right ?
+1223010787,Andrew Allison,,"I have joined the group in the hope that I can get advice about technical problems... if, and when, they happen... No problems (for me) at the moment though...
+
+I am running GNU EMACS 21.4.1 on my LINUX laptop and GNU EMACS 21.2.1 on my old Windows laptop"
+565561647,Ragad Al-Angari,,I am using emacs now to log in and access Unix interface :) through exceed program
+1051026142,Brian Elmegaard,,Emacs on windows is either on http://ftp.gnu.org/pub/gnu/emacs/windows/ or http://www.ourcomments.org/cgi-bin/emacsw32-dl-latest.pl
+700868,Sheeva Azma,,actually ... is there a windows version of emacs?  i don't have linux on my pc anymore
+670485435,Othmane Taky,,"Aquamacs rulZZ!!!
+"
+562297862,Benjamin Keil,,"Apparently there's no XEmacs love in this group: http://www.xemacs.org/ ?
+
+No big loss. "
+587878625,Burak Bayramli,,"Hello y'all, for those on Windoze wanting to use Emacs 22, for Java dev, I've got the dotemacs along with the needed packages 
+
+http://www.bilgidata.com/kurumsaljava/kitap-tools-emacs-1.6.zip
+
+Piece,
+"
+500058253,Edward O'Connor,,Become a fan of Emacs on Facebook: http://www.facebook.com/profile.php?id=7661721709
+558706880,Dinesh Rageux,,"Hey all, today i finally discovered how to code in a efficient way with emacs !!!
+I got myself a hand surgery that provides me with 3 other fingers on both hands ! I can now type my shortcuts very fast !
+I also hired a brand new emacs-secretary which sits"
+751948416,Matías Larre Borges,,"Hi !
+I would like to know how you succeed on being efficient with emacs.
+The only efficient way of using emacs I ever found, is to turn on vi mode !"
+615561843,Stuart Clayman,,It's good to see the picture of the TECO manual.  It reminds me that I still have one at home.
+644002058,Ignat Skoryh,,I've remapped my 'Right Alt' to 'Left Ctrl' in addition to 'CapsLock' to 'Ctrl' swap. Now I can use my right thumb for Ctrl. Works great!
+1086541168,Chris Lockfort,,"Emacs 22.1 = ♥♥♥♥♥
+
+""People sometimes ask me if it is a sin in the Church of Emacs to use vi. Using a free version of vi is not a sin; it is a penance."" ~Richard Stallman"
+500058253,Edward O'Connor,,Emacs 22.1 released today: http://www.gnu.org/software/emacs/
+503024788,Jessica Spurling,,"i've been an emacs user since 1988. i became an emacs user with RSI in the early 90's. 
+
+i've been an emacs+kinesis user since 1996. I haven't had any RSI since.  
+
+if you're worried about RSI, do more than remap your keys. get a kinesis contoured keyboar"
+6010344,Paul Kalmar,,"Anyone know how to map a command to caps-lock?  In particular I was hoping to map M-/ there, because it's right next to where I'd be doing tab-complete."
+1243620105,Michael Behr,,"Emacs is my editor, shell, REPL, debugger, and video game console, and may someday be my newsreader, email client, and secondary web browser. I'm writing this very wall post in Emacs.
+
+I also appear to be the 100th member of this group."
+9133848,Kunal Ganeshpure,,EMACS ROCKS!!!
+120605640,Vladimir Sedach,,I recommend making Caps Lock be the rubout (backspace) key like on Lisp Machine keyboards. Try it!
+500011067,Justin Rosenstein,,"If you're worried about RSI (or if you just want to use emacs faster), I'd recommend making your Caps Lock into another Ctrl key.  On Windows, you can just run:
+
+http://johnhaller.com/jh/useful_stuff/disable_caps_lock/caps_lock_to_control.reg"
+1232646,Fred Jiang,,"how many people here also belong to ""VIM users""?"
+4900733,Max Martin,,"Mostly joined for the picture of the gnu.
+
+C-x C-s
+C-x C-c"
+14209147,Ryan Moszynski,,"try rsi break if you use kde
+
+http://www.rsibreak.org/index.php/Main_Page"
+204686,Mark Slee,,"Emacs gives me RSI, yet I still love and use it."
+500018611,Marc Kwiatkowski,,"The official Emacs Users' Song?
+
+http://www.gnu.org/music/free-software-song.au"
+1309,Bob Trahan,,Thanks for the invite - I'm a VI man though.
