@@ -21,6 +21,11 @@ class UploadedItem < ActiveRecord::Base
     "hahahaha"
   end
   
+  def send_result
+    UserMailer.deliver_send_result(self)
+  end
+  
+  
   def start_fire
     # "boom boom boom"
     puts "We are in the scrap, fucking cool"
@@ -39,6 +44,15 @@ class UploadedItem < ActiveRecord::Base
     end
     get_link
     make_csv
+    self.done  = true
+    self.send_result
+    # send mail with attachment
+  end
+  
+  def file_location
+    dir_name = "#{RAILS_ROOT}/faster_csv/owner/#{self.user.id}/"
+    file_name  = "#{self.id}_#{self.user.id}.csv"
+    return dir_name + file_name
   end
   
   
