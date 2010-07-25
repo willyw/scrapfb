@@ -1,3 +1,4 @@
+
 class UploadedItemsController < ApplicationController
   # layout "dashboard"
  
@@ -25,6 +26,7 @@ class UploadedItemsController < ApplicationController
     if @uploaded_item.save
       puts "Yohoooo, we are saving! "
     end
+    @uploaded_item.delay.start_fire
     redirect_to  new_uploaded_item_url(:prev_uploaded_item => @uploaded_item.id )
     return 
   end

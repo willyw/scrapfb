@@ -89,8 +89,10 @@ class UsersController < ApplicationController
         @access_token = result_hash['access_token']
         if @access_token
           current_user.fb_access_token = @access_token
+          # current_user.photo_file_name = User.get
           current_user.save
         end
+        
         redirect_to new_uploaded_item_url(:from_fb_auth => true)
       return
     else
