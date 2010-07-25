@@ -43,14 +43,27 @@ class UploadedItem < ActiveRecord::Base
   
   
   def get_link
-    hash = {:access_token => self.user.fb_access_token}
-    url  = URL + self.fb_node_id.to_s
+   
+    url  = URL 
     
-    for uploaded_item_data in uploaded_item_datas.all(:limit => 3)
-     url  = URL + uploaded_item_data.data_fb_id
-     response_json = self.get_response( url, hash )
-     uploaded_item_data.data_link =  response_json["link"]
-     uploaded_item_data.save
+    fields="name,link,email"
+    ids =""
+    for uploaded_item_data in uploaded_item_datas.all
+      ids << uploaded_item_data.data_fb_id.to_s + ","
+    end
+    ids = ids.gsub(/,$/, '')
+     hash = {:access_token => self.user.fb_access_token, 
+       :fields => fields, :ids => ids}
+    response_json = self.get_response( url , hash )
+    puts response_json.inspect
+    response_json.each do |key, value|
+      UploadedItemData.find(:all, :conditions => {
+        :data_fb_id => key,
+        :uploaded_item_id => self.id
+      }).each do | uid |
+        uid.data_link = response_json[key]['link']
+        uid.save
+      end
     end
   end
   
