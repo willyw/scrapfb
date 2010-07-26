@@ -16,7 +16,7 @@ class UploadedItem < ActiveRecord::Base
   default_params :output => 'json'
   format :json
   URL = "https://graph.facebook.com/"
-  
+  PUBLIC_URL  = "http://graph.facebook.com/"
   def say_ho
     "hahahaha"
   end
@@ -28,6 +28,7 @@ class UploadedItem < ActiveRecord::Base
   
   def start_fire
     # "boom boom boom"
+    get_node_details
     puts "We are in the scrap, fucking cool"
     hash = {:access_token => self.user.fb_access_token}
     url  = URL + self.fb_node_id.to_s
@@ -53,6 +54,30 @@ class UploadedItem < ActiveRecord::Base
     dir_name = "#{RAILS_ROOT}/faster_csv/owner/#{self.user.id}/"
     file_name  = "#{self.id}_#{self.user.id}.csv"
     return dir_name + file_name
+  end
+  
+  def get_node_pic
+    url  = PUBLIC_URL + fb_node_id + "/picture?type=large"
+    # photo_file_name is the link to the fb server
+    photo_file_name = url
+    self.save
+  end
+  
+  
+  def get_node_details
+    # get pic
+    get_node_pic
+    
+     # get name description link
+    url  = URL  + self.fb_node_id.to_s
+     hash = {:access_token => self.user.fb_access_token}
+    response_json = self.get_response( url , hash )
+    puts 'This is inside the get_node_details'
+    puts response_json.inspect
+    self.title = response_json["name"]
+    self.description = response_json["description"]
+    self.link = response_json["link"]
+    self.save
   end
   
   
@@ -135,10 +160,14 @@ class UploadedItem < ActiveRecord::Base
     end
   end
   
-  def get_response( url, hash)
+  def get_response( url, hash, parse = true)
     puts "Inside self.get_response"
     response = UploadedItem.get(url, :query => hash)
-    return JSON.parse(response.body)
+    if parse == false
+      return response.body
+    else
+      return JSON.parse(response.body)
+    end
   end
   
   def print_conversation( response_json )
