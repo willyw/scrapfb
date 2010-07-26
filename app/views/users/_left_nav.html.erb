@@ -5,7 +5,7 @@
 		<% else %>
 			<li>
 		<% end %>
-			User Data
+			<%= link_to "User Data", account_url %>
 		</li>
 		
 		<% if params[:controller] =="users" and (params[:action] == "try_oauth" or params[:action]=="oauth_redirect")%>

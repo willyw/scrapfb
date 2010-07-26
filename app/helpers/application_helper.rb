@@ -4,7 +4,8 @@ module ApplicationHelper
     # condition_1_qtiest?(params) or
     #       condition_2_qtiest?(params) or
     #         condition_3_qtiest?(params)
-    params[:controller]=="items" and params[:action]=="index"
+   ( params[:controller]=="items" and params[:action]=="index" ) or
+    ( params[:controller] == "user_sessions" and params[:action] == "new")
   end
   
   def show_mycute?( params )
@@ -12,7 +13,8 @@ module ApplicationHelper
   end
   
   def show_cuteProfile?( params )
-    params[:controller] == "users" and params[:action] =="show" 
+    (params[:controller] == "users" and params[:action] =="show" ) or 
+     ( params[:controller] == "users" and params[:action] =="try_oauth" )
   end
   
   
