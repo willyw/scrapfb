@@ -229,7 +229,25 @@ class UploadedItem < ActiveRecord::Base
   end
   
   
-  def scrap
+  def make_data
+    # get the axis value ( day )
+    dates  = uploaded_item_datas.sort_by{|e| e.comment_created}.map do |e|
+      e.comment_created.to_date
+    end
+    
+    dates.uniq!
+    
+    posting = []
+    dates.each do |date|
+      number_of_posts = uploaded_item_datas.find(:all, :conditions=>["comment_created >= ? and comment_created<?", 
+        date.to_datetime, date.to_datetime+ 1.day - 1.second] ).count
+      posting << number_of_posts
+    end
+    
+    ret_val = []
+    ret_val << dates
+    ret_val << posting
+    return ret_val
   end
   
   private
