@@ -1,3 +1,4 @@
+<%= render :partial => "plot_graph" %>
 <div id='left'>
 	<p class="opinion">
 		<img src="images/left_first.png" />
@@ -15,43 +16,23 @@
 		<% end %>
 	</p> -->
 </div>
-<div id='center'>
-	<h3>Mozart Choco Cream</h3>
-	<%#= image_tag @item.uploaded_item.photo.url(:describe) %>  
-	<img src="/images/qTiest_logo.png" />
-	<blockquote>
-		I found these cute little gems in Vienna, Austria at a store named Wiener Bierhoff. Their cuteness caught my interest immediately. I ended up in purchasing them, many of them.  
-	</blockquote>
-	<div id="question">
-		<p>
-			I think Mozart Choco Cream is: 
-		</p>
-		<form action="somewhere.html">
-			<ul class="clearfix">
-				<li>
-					<input type="radio" name="opinion" id="opinion1" value="normal" />
-					<label for="opinion1">Normal</label>
-				</li>
-			
-				<li>
-					<input type="radio" name="opinion" id="opinion2" value="cute" />
-					<label for="opinion2">Cute</label>
-				</li>
-			
-				<li>
-					<input type="radio" name="opinion" id="opinion3" value="supercute" />
-					<label for="opinion3">SuperCute</label>
-				</li>
-			
-				<li>
-					<input type="radio" name="opinion" id="opinion4"  value="buylist" />
-					<label for="opinion4">In my buy list</label>
-				</li>
-			</ul>
-		</form>
-	</div> <!-- EO div#question -->
+
+
+<div id='center' style="width:700px;  ">
+	<div id="item-<%= @item.id %>" style="height:300px; width:650px;">
+	</div>
 </div>
-<div id='right'>
+
+
+<!-- <p>
+	<% data_value_hash = @item.uploaded_item.extract_yaml %>
+	<%= render_categories( data_value_hash["dates".to_sym] ) %>
+</p>
+<p>
+	The other one <br />
+	<%= render_data( data_value_hash['posting'.to_sym] ) %>
+</p> -->
+<!-- <div id='right'>
 	<p>
 		More qTies
 	</p>
@@ -70,4 +51,4 @@
 		
 
 	</ul>
-</div>
+</div> -->

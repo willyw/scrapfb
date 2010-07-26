@@ -5,6 +5,7 @@ require 'cgi'
 require 'fileutils'
 require 'ftools'
 require 'fastercsv'
+require 'yaml'
 class UploadedItem < ActiveRecord::Base
   attr_accessor :fb_link
   belongs_to :user
@@ -46,8 +47,11 @@ class UploadedItem < ActiveRecord::Base
     end
     get_link
     make_csv
+    make_data(20) # 20 day gap
     self.done  = true
     self.send_result
+    Item.create(:uploaded_item_id => self.id )
+    
     # send mail with attachment
   end
   
@@ -229,7 +233,8 @@ class UploadedItem < ActiveRecord::Base
   end
   
   
-  def make_data
+  
+  def make_data( day_gap = 1 )
     # get the axis value ( day )
     dates  = uploaded_item_datas.sort_by{|e| e.comment_created}.map do |e|
       e.comment_created.to_date
@@ -240,15 +245,30 @@ class UploadedItem < ActiveRecord::Base
     posting = []
     dates.each do |date|
       number_of_posts = uploaded_item_datas.find(:all, :conditions=>["comment_created >= ? and comment_created<?", 
-        date.to_datetime, date.to_datetime+ 1.day - 1.second] ).count
+        date.to_datetime, date.to_datetime+ day_gap.day - 1.second] ).count
       posting << number_of_posts
     end
     
     ret_val = []
     ret_val << dates
     ret_val << posting
-    return ret_val
+    hash = { :dates => dates, :posting => posting}
+    # return ret_val
+    create_yaml_container( hash )
+    return hash
+    # save as text_file somewhere?
+    # read later before printing?
   end
+  
+  def create_yaml_container(hash_result) 
+    self.yaml_container  = YAML::dump(hash_result)
+    self.save
+  end
+  
+  def extract_yaml
+    ruby_obj = YAML::load( self.yaml_container)
+  end
+    
   
   private
   # def link_to_item

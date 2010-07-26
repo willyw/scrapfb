@@ -1,0 +1,55 @@
+<script type="text/javascript">
+	<% data_value_hash = @item.uploaded_item.extract_yaml %>
+		var chart;
+		jQuery(document).ready(function() {
+			chart = new Highcharts.Chart({
+				chart: {
+					renderTo: '<%= "item-#{@item.id}" %>',
+					defaultSeriesType: 'line',
+					marginRight: 130,
+					marginBottom: 25
+				},
+				title: {
+					text: '<%= @item.uploaded_item.title %>',
+					x: -20 //center
+				},
+				subtitle: {
+					text: 'Source: <%= @item.uploaded_item.link %>',
+					x: -20
+				},
+				xAxis: {
+					categories: [<%= render_categories( data_value_hash["dates".to_sym] ) %>]
+				},
+				yAxis: {
+					title: {
+						text: 'Feed Count'
+					},
+					plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+					}]
+				},
+				tooltip: {
+					formatter: function() {
+			                return '<b>'+ this.series.name +'</b><br/>'+
+							this.x +': '+ this.y +'°C';
+					}
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top',
+					x: -10,
+					y: 100,
+					borderWidth: 0
+				},
+				series: [{
+					name: 'Data',
+					data: [<%= render_data( data_value_hash['posting'.to_sym] ) %> ]
+				}]
+			});
+			
+			
+		});
+	</script>
