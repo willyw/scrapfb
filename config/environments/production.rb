@@ -37,3 +37,11 @@ AppDetail= {
 }
 
 
+
+API_KEY = 'e12e734822f3570aa31f841e12535a5e'
+APP_SECRET = '517577e3fa6b78b4d396a1dc1c3fe273'
+APP_ID  = '115722105143307'
+
+HOST = "http://scrapfb.qtiest.com"
+
+

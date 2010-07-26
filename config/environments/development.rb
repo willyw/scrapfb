@@ -23,3 +23,8 @@ AppDetail= {
   :hostname => "http://localhost:3000",
   :name => 'qTiest-Dev'
 }
+API_KEY = 'e4de6a450580adedbdadf124fba63e11'
+APP_SECRET = '3368a580517b3cc316c9293cf24619fc'
+APP_ID  = '135319876508646'
+
+HOST = "http://localhost:3000"

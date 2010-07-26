@@ -1,9 +1,7 @@
 require 'cgi'
 
 class UsersController < ApplicationController
-  API_KEY = 'e4de6a450580adedbdadf124fba63e11'
-  APP_SECRET = '3368a580517b3cc316c9293cf24619fc'
-  APP_ID  = '135319876508646'
+
   
   
   def new
@@ -74,7 +72,7 @@ class UsersController < ApplicationController
       puts "hahahahaha, here we are!!!!!\n"*30
       @result =  User.get( base_url, :query => {
         :client_id => APP_ID ,
-        :redirect_uri => 'http://localhost:3000/oauth_redirect',
+        :redirect_uri => "#{HOST}/oauth_redirect",
         :client_secret => APP_SECRET,
         :code  => params[:code]
         } )
@@ -98,7 +96,8 @@ class UsersController < ApplicationController
     else
       base_url = "https://graph.facebook.com/oauth/authorize?"
       base_url << "client_id=#{APP_ID}&"
-      base_url  << "redirect_uri=#{CGI.escape('http://localhost:3000/oauth_redirect')}&"
+      data = HOST+ "/oauth_redirect"
+      base_url  << "redirect_uri=#{CGI.escape(data)}&"
       base_url << "scope=offline_access&"
       base_url << "display=popup"
       redirect_to base_url
