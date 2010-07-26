@@ -33,10 +33,11 @@ class UploadedItem < ActiveRecord::Base
     hash = {:access_token => self.user.fb_access_token}
     url  = URL + self.fb_node_id.to_s
     url = url + "/feed"
-    puts url
+    puts url + "?access_token=#{self.user.fb_access_token}"
     while(true) do 
       response_json = self.get_response( url , hash )
-      # puts response_json.inspect
+      puts "This is frmo here"
+      puts response_json.inspect
       self.print_conversation( response_json )
       unless self.any_next_page?( response_json )
         break
@@ -68,12 +69,9 @@ class UploadedItem < ActiveRecord::Base
     # get pic
     get_node_pic
     
-     # get name description link
     url  = URL  + self.fb_node_id.to_s
-     hash = {:access_token => self.user.fb_access_token}
+    hash = {:access_token => self.user.fb_access_token}
     response_json = self.get_response( url , hash )
-    puts 'This is inside the get_node_details'
-    puts response_json.inspect
     self.title = response_json["name"]
     self.description = response_json["description"]
     self.link = response_json["link"]
@@ -184,7 +182,8 @@ class UploadedItem < ActiveRecord::Base
         # )
         self.uploaded_item_datas.create(:data_name => entry['from']['name'], 
           :data_fb_id => entry['from']['id'],
-          :data_message => entry['message']
+          :data_message => entry['message'],
+          :comment_created => entry["created_time"].to_datetime
         )
         puts "#{entry['from']['name']}  --- #{entry['from']['id']}   -- #{entry['message']} "
       end
