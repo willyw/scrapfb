@@ -76,6 +76,7 @@ class UploadedItem < ActiveRecord::Base
     url  = URL  + self.fb_node_id.to_s
     hash = {:access_token => self.user.fb_access_token}
     response_json = self.get_response( url , hash )
+    puts response_json.inspect
     self.title = response_json["name"]
     self.description = response_json["description"]
     self.link = response_json["link"]

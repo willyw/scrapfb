@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     UserMailer.deliver_welcome_email
   end
   
+  def send_second_mail
+    UserMailer.delay.deliver_welcome_email
+  end
+  
   def map_rating( current_stranger ) 
     for rating in current_stranger.ratings
       Rating.create(:user_id => self.id, 
