@@ -79,7 +79,7 @@ class UploadedItem < ActiveRecord::Base
     puts response_json.inspect
     self.title = response_json["name"]
     self.description = response_json["description"]
-    self.link = response_json["link"]
+    self.link = URL + "group.php?gid=#{self.fb_node_id}"
     self.save
   end
   
